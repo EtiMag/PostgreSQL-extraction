@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 duckdb.load_extension("postgres")
 
-with open("parameters.yml", "r") as parameters_file:
+with open("Extract_PostgreSQL_to_parquet/parameters.yml", "r") as parameters_file:
     parameters: dict = yaml.safe_load(parameters_file)
 
 output_dir: str = parameters["output_directory"]
@@ -49,7 +49,7 @@ engine: sqlalchemy.engine.Engine = sqlalchemy.create_engine(
 logging.debug("Creating sqlalchemy engine to fetch tables [OK]")
 
 # fetch list of all PostgreSQL tables to extract with their schema name, using fetch_tables_to_extract.sql
-with open("fetch_tables_to_extract.sql", "r") as request_file:
+with open("Extract_PostgreSQL_to_parquet/fetch_tables_to_extract.sql", "r") as request_file:
     request_fetch_tables_to_extract: str = request_file.read().replace("\n", " ")
 
 with engine.connect() as connection:

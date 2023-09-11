@@ -17,10 +17,10 @@ conda activate PostgreSQL-extraction
 
 Try to install the extension `postgres_scanner` directly with:
 ```
-python install_postgres_scanner_directly.py
+python install_postgres_scanner/install_postgres_scanner_directly.py
 ```
 
 If direct installation does not work (which is the case for DuckDB version `0.8.1`):
 - Download http://extensions.duckdb.org/v0.8.1/windows_amd64/postgres_scanner.duckdb_extension.gz (adapt version to DuckDB, use `pip show duckdb` to retrieve your DuckDB version)
 - Unzip the file `postgres_scanner.duckdb_extension.gz` and place it in the working directory
-- Run `python install_postgres_scanner_from_file.py`
+- Run `python install_postgres_scanner/install_postgres_scanner_from_file.py`
