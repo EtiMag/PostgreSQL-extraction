@@ -1,6 +1,6 @@
 # PostgreSQL-extraction
 
-A tool to extract a PostgreSQL database or a part of it and create a duckdb database dump and the set of corresponding parquet files.
+A tool to extract a PostgreSQL database or a part of it and create a duckdb database dump, and the set of corresponding parquet files.
 
 ## Environment
 
@@ -13,7 +13,7 @@ Activate the environment with:
 conda activate PostgreSQL-extraction
 ```
 
-## Install DuckDB extension for PostgreSQL
+### Install DuckDB extension for PostgreSQL
 
 Try to install the extension `postgres_scanner` directly with:
 ```
