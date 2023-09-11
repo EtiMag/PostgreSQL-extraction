@@ -1,0 +1,12 @@
+name: PostgreSQL-extraction
+dependencies:
+  - python
+  - pyarrow
+  - pandas
+  - sqlalchemy
+  - pyyaml
+  - pip
+  - pip:
+      - 'psycopg2-binary'
+      - 'sqlalchemy'
+      - 'duckdb'
