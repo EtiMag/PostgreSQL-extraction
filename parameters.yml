@@ -1,0 +1,16 @@
+dababase:
+  host: UNDEFINED
+  database_name: UNDEFINED
+  port: 5432
+  username: UNDEFINED
+extraction_parameters:
+  types_PostgreSQL_to_cast_to_string:  # Variables with this type will be cast to string before transfer
+    - "timestamp without time zone"
+  types_PostgreSQL_to_exclude:
+    # Variables with these types will never be downloaded
+    # Reason: duckdb runs type cast on its own processing engine
+    # but some intervals cannot be loaded from postgreSQL due to typmod != -1
+    # See this line of DuckDB source code for more details:
+    # https://github.com/duckdblabs/postgres_scanner/blob/828578442d18fb3acb53b08f4f54a0683217a2c8/postgres_scanner.cpp#L774C21-L774C21
+    - "interval"
+output_directory: "./extracts/"  # output directory where to store extracted tables as parquet files
