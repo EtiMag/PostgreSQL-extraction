@@ -1,0 +1,2 @@
+input_directory_parquet_files: ./extracts/
+duckdb_database_path: ./database_DuckDB.duckdb
